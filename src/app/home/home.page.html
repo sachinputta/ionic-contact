@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+   <!-- <h1>hello world</h1> -->
+   <ion-button   [routerLink]="['/hello-world']" color="success">Success</ion-button>
+
+   <ion-button (click)="getRequest()">GET</ion-button>
+ <br>
+   {{requestObject}}
+   <br>
+   <br>
+
+   <!-- <ion-button color="dark" expand="full" (click)="call()">CALL</ion-button>
+   <br>
+   <br>
+   <ion-input [(ngModel)]= "smsText" type="text" placeholder="Enter Message"></ion-input>
+   <ion-button color="dark" expand="full" (click)="smss()">Send</ion-button> -->
+
+<ion-item *ngFor="let contact of everybody | async">
+
+
+  <ion-label>
+    {{contact.name.givenName}}
+  </ion-label>
+  <ion-icon item-start *ngIf="contact.phoneNumbers"
+  (click)="callContact(contact.phoneNumbers[0].value)"
+  ios="ios-call"
+  md="md-call"
+  tappable></ion-icon>
+
+</ion-item>
+  </div> 
+</ion-content>

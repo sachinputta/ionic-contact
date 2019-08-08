@@ -1,0 +1,7 @@
+{
+  "name": "meigo",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
